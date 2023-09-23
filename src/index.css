@@ -1,13 +1,84 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+nav a.active{
+  color: #D87D4A;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.background{
+  background-image: url("./bg/Bitmap1.png");
+  background-repeat: no-repeat;
+  background-color: black;
+  background-position: center;
+  background-size: cover;
+}
+@media screen and (min-width: 300px) and (max-width: 767px) {
+  .background{
+    background-image: url("./bg/Bitmap2.png");
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .background{
+    background-image: url("./bg/Bitmap3.png");
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 30px; /* Adjust this to change the spacing between the label and radio button */
+  margin-bottom: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  left: 0;
+
+  border: 1px solid #CFCFCF;
+  height: 20px; /* Adjust the size of the custom radio button */
+  width: 20px; /* Adjust the size of the custom radio button */
+  background-color: #fff; /* Background color when not checked */ /* Border color */
+  border-radius: 50%; /* Makes it round */
+  box-shadow: inset 0 0 0 2px white; /* Add a white space (border-like) before the actual border */
+}
+
+.radio-container:hover input ~ .checkmark {
+  background-color: #ffffff; 
+}
+.radio-container input:checked ~ .checkmark {
+  background-color: #D87D4A; 
+  box-shadow: inset 0 0 0 4px white;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.radio-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.radio-container input:checked ~ .checkmark:after {
+  display: block;
 }

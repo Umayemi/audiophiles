@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Speakers from "./pages/Speakers";
+import Headphones from "./pages/Headphones";
+import Earphones from "./pages/Earphones";
+import ProductDetails from "./pages/ProductDetails";
+import { ToastContainer } from "react-toastify";
+import Checkout from "./pages/Checkout";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+      <ToastContainer/>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/speaker" element={<Speakers/>} />
+        <Route path="/headphone" element={<Headphones/>} />
+        <Route path="/earphone" element={<Earphones/>} />
+        <Route path="/detail" element={<ProductDetails/>} />
+        <Route path="/checkout" element={<Checkout/>} />
+      </Routes>
+       
+      </BrowserRouter>
+     
     </div>
   );
 }
