@@ -48,7 +48,10 @@ const NavBar = ({ cart, increaseQuantity, decreaseQuantity,clearCart}) => {
           <NavLink to={"/speaker"} ><p>SPEAKERS</p></NavLink>
           <NavLink to={"/earphone"} ><p>EARPHONE</p></NavLink>
         </nav>
+        <div className=' relative'>
         <i className="fa fa-shopping-cart text-white " aria-hidden="true" onClick={HandleCart}></i>
+        <p className=' absolute text-[#D87D4A] top-[-10%] right-[-10%] text-[10px] bg-white rounded-[50%] px-1'>{cart.length}</p>
+        </div>
       </div>
       <div className=' '>
         {toggleCart && (<div className=' w-[100%] h-screen bg-[#00000028] z-50 top-0  left-0 right-0 bottom-0 absolute flex flex-col items-center lg:items-end justify-center lg:justify-start lg:px-[100px] lg:top-20 px-[5%]' onClick={HandleCart}>
@@ -57,7 +60,9 @@ const NavBar = ({ cart, increaseQuantity, decreaseQuantity,clearCart}) => {
               <div><p>CART({cart.length})</p></div>
               <button className=' opacity-50 ' onClick={()=>clearCart()}>Remove all</button>
             </div>
+           
             <div>
+              
               {cart?.map((item) => (
                 <div key={item.id} className=' flex justify-between items-center mt-5'>
                   <div className=' flex items-center'>
