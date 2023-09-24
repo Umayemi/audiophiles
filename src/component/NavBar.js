@@ -48,8 +48,8 @@ const NavBar = ({ cart, increaseQuantity, decreaseQuantity,clearCart}) => {
           <NavLink to={"/speaker"} ><p>SPEAKERS</p></NavLink>
           <NavLink to={"/earphone"} ><p>EARPHONE</p></NavLink>
         </nav>
-        <div className=' relative'>
-        <i className="fa fa-shopping-cart text-white " aria-hidden="true" onClick={HandleCart}></i>
+        <div className=' relative cursor-pointer' onClick={HandleCart}>
+        <i className="fa fa-shopping-cart text-white " aria-hidden="true" ></i>
         <p className=' absolute text-[#D87D4A] top-[-10%] right-[-10%] text-[10px] bg-white rounded-[50%] px-1'>{cart.length}</p>
         </div>
       </div>

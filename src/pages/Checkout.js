@@ -87,6 +87,10 @@ const Checkout = ({ cart }) => {
 
     const handlePay = (e) => {
         e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Optional smooth scrolling animation
+          });
 
         if (!clientName) {
             setErrClientName("Enter your name");
@@ -156,7 +160,7 @@ const Checkout = ({ cart }) => {
             <div className=' ml-[5%]  md:mx-[10%] py-[5%]   md:py-[5%] lg:pt-[100px] lg:ml-[100px]'>
                 <button className=' text-[15px] opacity-50' onClick={handleNavigate}>Go back</button>
             </div>
-            <div className=' flex flex-col justify-between mx-[5%] md:mx-[10%] lg:mx-[100px] '>
+            <div className=' flex flex-col lg:flex-row justify-between mx-[5%] md:mx-[10%] lg:mx-[100px] '>
                 <div className=' bg-white w-full lg:w-[75%] p-3 lg:p-10 md:p-5 mb-[50px] '>
                     <h1 className=' text-[32px]'>CHECKOUT</h1>
                     <p className=' uppercase text-[#D87D4A] text-[13px] my-5'>Billing Details</p>
